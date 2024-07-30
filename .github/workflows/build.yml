@@ -1,4 +1,28 @@
 # build.yml
-# Build via github actions
+# Purpose: Build via github actions
+# Author(s): Vincent392
 
 name: Build with gcc
+
+on:
+  push:
+    paths:
+      - '**/**.cpp'
+      - '**/**.hpp'
+      - '**/**.c'
+      - '**/**.h'
+      - '.github/workflows/build.yml'
+  pull_request:
+    paths:
+      - '**/**.cpp'
+      - '**/**.hpp'
+      - '**/**.c'
+      - '**/**.h'
+      - '.github/workflows/build.yml'
+  workflow_dispatch:
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
