@@ -7,6 +7,7 @@
 
 //Includes
 #include <stdio.h>
+#include <cstring>
 #include <iostream>
 
 int main(int argc, char* args[]) {
