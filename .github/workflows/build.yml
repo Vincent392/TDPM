@@ -66,7 +66,7 @@ jobs:
           name: TDPM-macOS-Intel
           path: artifact/
 
-   build-mac-arm:
+  build-mac-arm:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
