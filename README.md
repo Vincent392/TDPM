@@ -1,9 +1,14 @@
 # TDPM
+### Til Dos Package Manager
+
+----------------------------
+
+The Til Dos Package Manager (TDPM) Source code. re-written in blasing fast C++!
 
 Build status: ???
 
-================================
+----------------------------
 
-The Til Dos Package Manager (TDPM) Source code. written in Java (JDK8)
+# Index
 
-### Version 0.1 only supports Windows, Linux support will arrive with 0.1.1 or 0.2.0
+## 1. Info
