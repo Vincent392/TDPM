@@ -58,8 +58,9 @@ jobs:
         run: |
           mkdir -p artifact/bin
           cd src
+          mv tdpm-intel.app ../artifact/
           mv tdpm-pkg-intel.dylib ../artifact/
-#          mv *.dylib ../artifact/bin/
+#          mv *.dylib ../artifact/bin
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -80,10 +81,44 @@ jobs:
         run: |
           mkdir -p artifact/bin
           cd src
+          mv tdpm.app ../artifact/
           mv tdpm-pkg.dylib ../artifact/
-#          mv *.dylib ../artifact/bin/
+#          mv *.dylib ../artifact/bin
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: TDPM-macOS-ARM
+          path: artifact/
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup MSYS2
+      uses: msys2/setup-msys2@v2
+      with:
+        update: true
+        install: >-
+          mingw-w64-x86_64-toolchain
+
+     - name: Build with g++
+        run: |
+           cd src
+           msys2 "g++ tdpm_main.cpp -o tdpm.exe"
+           msys2 "g++ tdpm_pkg_main.cpp -shared -o tdpm-pkg.dll"
+           cd ..
+
+      - name: Move to artifact directory
+        run: |
+          mkdir -p artifact/bin
+          cd src
+          mv tdpm.exe ../artifact/
+          mv *.dll ../artifact/bin
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: TDPM-Windows
           path: artifact/
