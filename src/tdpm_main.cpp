@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <iostream>
 
-int main() {
+int main(int argc, char* args[]) {
 //Command Line Arguments, we need these
     for (int i = 1; i < argc; ++i) {
         if (std::strcmp(args[i], "help") == 0) {
