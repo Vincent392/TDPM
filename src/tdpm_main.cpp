@@ -25,6 +25,7 @@ int main(int argc, char* args[]) {
          printf("Type \"Help\" to view them all.\n");
          return -01;
         }
+    }
 }
 
 //void showhelp() {
