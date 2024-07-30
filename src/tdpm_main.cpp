@@ -19,9 +19,9 @@ int main(int argc, char* args[]) {
         } else if (std::strcmp(args[i], "uninstall") == 0) {
 
         } else {
-         Printf("Error 01");
-         Printf("No command line argument specified\n");
-         Printf("Type \"Help\" to view them all.\n");
+         printf("Error 01");
+         printf("No command line argument specified\n");
+         printf("Type \"Help\" to view them all.\n");
          return E01;
         }
 }
