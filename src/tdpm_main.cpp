@@ -14,19 +14,19 @@ int main(int argc, char* args[]) {
 //Command Line Arguments, we need these
     for (int i = 1; i < argc; ++i) {
         if (std::strcmp(args[i], "help") == 0) {
-           showhelp()
+           //showhelp()
         } else if (std::strcmp(args[i], "install") == 0) {
 
         } else if (std::strcmp(args[i], "uninstall") == 0) {
 
         } else {
-         printf("Error 01");
+         printf("Error -01");
          printf("No command line argument specified\n");
          printf("Type \"Help\" to view them all.\n");
-         return E01;
+         return -01;
         }
 }
 
-void showhelp() {
+//void showhelp() {
 
-}
+//}
