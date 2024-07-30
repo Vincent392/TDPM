@@ -4,7 +4,10 @@
  * Author(s): Vincent392
  */
 
+
+//Includes
 #include <stdio.h>
+#include <iostream>
 
 int main() {
 //Command Line Arguments, we need these
@@ -21,3 +24,8 @@ int main() {
          Printf("Type \"Help\" to view them all.\n");
          return E01;
         }
+}
+
+void showhelp() {
+
+}
