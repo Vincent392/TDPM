@@ -1,0 +1,4 @@
+# build.yml
+# Build via github actions
+
+name: Build with gcc
