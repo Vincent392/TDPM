@@ -30,4 +30,4 @@ jobs:
         run: |
            cd src
            g++ tdpm_main.cpp -o tdpm
-           g++ tdpm_main_pkg.cpp -shared -o tdpm-pkg.so
+           g++ tdpm_pkg_main.cpp -shared -o tdpm-pkg.so
