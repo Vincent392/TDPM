@@ -44,7 +44,7 @@ jobs:
           name: TDPM-Linux
           path: artifact/
 
- build-macos-intel:
+  build-mac-intel:
     runs-on: macos-13
     steps:
       - uses: actions/checkout@v4
@@ -58,15 +58,15 @@ jobs:
         run: |
           mkdir -p artifact/bin
           cd src
-          mv tdpm-intel ../artifact/
+          mv tdpm-intel.dylib ../artifact/
           mv *.dylib ../artifact/bin/
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: TDPM-Mac-Intel
+          name: TDPM-macOS-Intel
           path: artifact/
 
- build-mac-arm:
+   build-mac-arm:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
@@ -74,16 +74,16 @@ jobs:
         run: |
            cd src
            g++ tdpm_main.cpp -o tdpm.app
-           g++ tdpm_pkg_main.cpp -shared -o tdpm-pkg.so
+           g++ tdpm_pkg_main.cpp -shared -o tdpm-pkg.dylib
            cd ..
       - name: Move to artifact directory
         run: |
           mkdir -p artifact/bin
           cd src
-          mv tdpm.app ../artifact/
+          mv tdpm-intel.dylib ../artifact/
           mv *.dylib ../artifact/bin/
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: TDPM-mac-ARM
+          name: TDPM-macOS-ARM
           path: artifact/
