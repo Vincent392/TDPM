@@ -106,8 +106,8 @@ jobs:
     - name: Build with g++
       run: |
            cd src
-           msys2 "g++ tdpm_main.cpp -o tdpm.exe"
-           msys2 "g++ tdpm_pkg_main.cpp -shared -o tdpm-pkg.dll"
+           msys2 -c "g++ -o tdpm.exe tdpm_main.cpp -lmingw32 -mwindows -lntdll"
+           msys2 -c "g++ tdpm_pkg_main.cpp -shared -o tdpm-pkg.dll -lmingw32 -mwindows -lntdll"
            cd ..
 
     - name: Move to artifact directory
