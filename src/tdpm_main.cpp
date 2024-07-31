@@ -9,8 +9,8 @@
 #include <stdio.h>
 #include <cstring>
 #include <iostream>
-//bools
-bool pkgfile = null;
+//consts
+const char* pkgFile = null;
 
 int main(int argc, char* args[]) {
 //Command Line Arguments, we need these
