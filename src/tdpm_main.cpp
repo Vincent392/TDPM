@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include <cstring>
 #include <iostream>
+//bools
+bool pkgfile = null;
 
 int main(int argc, char* args[]) {
 //Command Line Arguments, we need these
@@ -16,9 +18,19 @@ int main(int argc, char* args[]) {
         if (std::strcmp(args[i], "help") == 0) {
            //showhelp()
         } else if (std::strcmp(args[i], "install") == 0) {
-
+            if (i + 1 < argc) {
+                pkgFile = args[i + 1];
+                i++;
+            } else {
+                printf("Error\nno package selected for installation\n");
+            }
         } else if (std::strcmp(args[i], "uninstall") == 0) {
-
+            if (i + 1 < argc) {
+                pkgFile = args[i + 1];
+                i++;
+            } else {
+                printf("Error\nno package selected for uninstallation\n");
+            }
         } else {
          printf("Error -01");
          printf("No command line argument specified\n");
