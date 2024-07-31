@@ -13,13 +13,13 @@
 const char* pkgFile = nullptr;
 //bools
 bool arch = "";
-if defined(_WIN32) || defined (_WIN64)
+#if defined(_WIN32) || defined (_WIN64)
 bool libext = "dll";
-else if defined(__APPLE__)
+#else if defined(__APPLE__)
 bool libext = "dylib";
-else if
+#else
 bool libext = "so";
-endif
+#endif
 
 
 int main(int argc, char* args[]) {
