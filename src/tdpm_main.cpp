@@ -11,21 +11,31 @@
 #include <iostream>
 //consts
 const char* pkgFile = nullptr;
-//bools
-bool arch = "";
-#if defined(_WIN32) || defined (_WIN64)
-bool libext = "dll";
-#else if defined(__APPLE__)
-bool libext = "dylib";
+//Library + Arch
+#if defined(_WIN32) || defined(_WIN64)
+    #define LIBRARY_EXTENSION "dll"
+#elif defined(__APPLE__)
+    #define LIBRARY_EXTENSION "dylib"
 #else
-bool libext = "so";
+    #define LIBRARY_EXTENSION "so"
+#endif
+#if defined(__x86_64__) || defined(_M_X64)
+    return "x86_64";
+#elif defined(__i386) || defined(_M_IX86)
+    return "x86";
+#elif defined(__arm__) || defined(_M_ARM)
+    return "arm";
+#elif defined(__aarch64__)
+    return "aarch64";
+#else
+    return "unknown";
 #endif
 
 
 int main(int argc, char* args[]) {
-    void* handle = dlopen("tdpm-pkg." + libext, RTLD_LAZY);
+    void* handle = popen("tdpm-pkg" + ARCHITECTURE + "." + LIBRARY_EXTENSION, RTLD_LAZY);
         if (!handle) {
-           fprintf(stderr, "Error: %s\n", dlerror());
+           printf(stderr, "Error: %s\n", dlerror());
            return 1;
 }        
 //Command Line Arguments, we need these
