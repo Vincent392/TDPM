@@ -30,7 +30,7 @@ jobs:
         run: |
            cd src
            g++ tdpm_main.cpp -o tdpm
-           g++ tdpm_pkg_main.cpp -shared -o tdpm-pkg.so
+           g++ tdpm_pkg_main.cpp -shared -o tdpm-pkg-x86_64.so
            cd ..
       - name: Move to artifact directory
         run: |
@@ -52,7 +52,7 @@ jobs:
         run: |
            cd src
            g++ tdpm_main.cpp -o tdpm-intel.app
-           g++ tdpm_pkg_main.cpp -shared -o tdpm-pkg-intel.dylib
+           g++ tdpm_pkg_main.cpp -shared -o tdpm-pkg-x86_64.dylib
            cd ..
       - name: Move to artifact directory
         run: |
@@ -75,7 +75,7 @@ jobs:
         run: |
            cd src
            g++ tdpm_main.cpp -o tdpm.app
-           g++ tdpm_pkg_main.cpp -shared -o tdpm-pkg.dylib
+           g++ tdpm_pkg_main.cpp -shared -o tdpm-pkg-aarch-64.dylib
            cd ..
       - name: Move to artifact directory
         run: |
@@ -107,7 +107,7 @@ jobs:
       run: |
            cd src
            msys2 -c "g++ -o tdpm.exe tdpm_main.cpp -lmingw32 -mwindows -lntdll"
-           msys2 -c "g++ tdpm_pkg_main.cpp -shared -o tdpm-pkg.dll -lmingw32 -mwindows -lntdll"
+           msys2 -c "g++ tdpm_pkg_main.cpp -shared -o tdpm-pkg-x86_64.dll -lmingw32 -mwindows -lntdll"
            cd ..
 
     - name: Move to artifact directory
