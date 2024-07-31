@@ -10,7 +10,7 @@
 #include <cstring>
 #include <iostream>
 //consts
-const char* pkgFile = null;
+const char* pkgFile = nullptr;
 
 int main(int argc, char* args[]) {
 //Command Line Arguments, we need these
