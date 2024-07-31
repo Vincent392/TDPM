@@ -11,8 +11,23 @@
 #include <iostream>
 //consts
 const char* pkgFile = nullptr;
+//bools
+bool arch = "";
+if defined(_WIN32) || defined (_WIN64)
+bool libext = "dll";
+else if defined(__APPLE__)
+bool libext = "dylib";
+else if
+bool libext = "so";
+endif
+
 
 int main(int argc, char* args[]) {
+    void* handle = dlopen("tdpm-pkg." + libext, RTLD_LAZY);
+        if (!handle) {
+           fprintf(stderr, "Error: %s\n", dlerror());
+           return 1;
+}        
 //Command Line Arguments, we need these
     for (int i = 1; i < argc; ++i) {
         if (std::strcmp(args[i], "help") == 0) {
