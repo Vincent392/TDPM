@@ -35,7 +35,7 @@ const char* pkgFile = nullptr;
 int main(int argc, char* args[]) {
     void* handle = popen("tdpm-pkg" + ARCHITECTURE + "." + LIBRARY_EXTENSION, RTLD_LAZY);
         if (!handle) {
-           printf(stderr, "Error: %s\n", dlerror());
+           printf(stderr, "Error: %s\n", perror());
            return 1;
 }        
 //Command Line Arguments, we need these
