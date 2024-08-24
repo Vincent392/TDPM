@@ -37,6 +37,7 @@ int main(int argc, char* args[]) {
         if (!handle) {
            printf(stderr, "Error: %s\n", perror());
            return 1;
+        }
 }        
 //Command Line Arguments, we need these
     for (int i = 1; i < argc; ++i) {
