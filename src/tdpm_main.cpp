@@ -24,11 +24,11 @@ const char* pkgFile = nullptr;
 
 void showHelp() {
     std::cout << "TDPM - Til Dos Package Manager\n"
-    std::cout << "Usage:\n"
-    std::cout << "  install <package>   Install a package\n"
-    std::cout << "  uninstall <package> Uninstall a package\n"
-    std::cout << "  help                Show this help message\n"
-    std::cout << "  ver                 Show the TDPM version\n";
+              << "Usage:\n"
+              << "  install <package>   Install a package\n"
+              << "  uninstall <package> Uninstall a package\n"
+              << "  help                Show this help message\n"
+              << "  ver                 Show the TDPM version\n";
 }
 
 void installPackage(const char* pkgFile) {
