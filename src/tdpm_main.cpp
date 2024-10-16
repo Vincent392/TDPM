@@ -13,6 +13,9 @@
 // Constants
 const char* pkgFile = nullptr;
 
+// Bools
+bool help = false;
+
 // Library Extension on platforms
 #if defined(_WIN32) || defined(_WIN64)
     #define LIBRARY_EXTENSION "dll"
@@ -22,7 +25,8 @@ const char* pkgFile = nullptr;
     #define LIBRARY_EXTENSION "so"
 #endif
 
-void showHelp() {
+//void showHelp() {
+if (showHelp) {
     std::cout << "TDPM - Til Dos Package Manager\n"
               << "Usage:\n"
               << "  install <package>   Install a package\n"
