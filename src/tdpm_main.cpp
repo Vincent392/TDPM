@@ -72,7 +72,8 @@ void installPackage(const char* pkgFile) {
 int main(int argc, char* args[]) {
     for (int i = 1; i < argc; ++i) {
         if (std::strcmp(args[i], "help") == 0) {
-            showHelp();
+            help = true;
+            //showHelp();
             return 0;
         } else if (std::strcmp(args[i], "install") == 0) {
             if (i + 1 < argc) {
